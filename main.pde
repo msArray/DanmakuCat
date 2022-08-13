@@ -6,10 +6,11 @@ int charay;
 int delayA;
 int tekix,tekiy;
 JSONArray  stage;
-
+int fps;
 
 void setup() {
-  frameRate(120);
+  fps=60;
+  frameRate(fps);
   size(600, 600);
   chara = loadImage("chara.png");
   teki = loadImage("teki.png");
@@ -59,22 +60,22 @@ void draw() {
   }else if(btntf == 1){
     tekix = 245;
     tekiy = 80;
-    if(delayA<60){
+    if(delayA<fps){
       fill(255);
       textSize(100);
       text("3", 280, 300);
       delayA++;
-    }else if(delayA<120){
+    }else if(delayA<fps*2){
       fill(255);
       textSize(100);
       text("2", 280, 300);
       delayA++;
-    }else if(delayA<180){
+    }else if(delayA<fps*3){
       fill(255);
       textSize(100);
       text("1",280,300);
       delayA++;
-    }else if(delayA<240){
+    }else if(delayA<fps*4){
       fill(255);
       textSize(100);
       text("0",280,300);
