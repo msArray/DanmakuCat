@@ -35,4 +35,4 @@
 ## コミット履歴
 - b64ab119e2a6ed19229309e88f7d74e0f48fe9ee　　　遅延を設定fpsに応じて遅らせるようにした
 - eb4b15357a0d31d9575b19461814a73b05e9cf95　　　画像をassetsフォルダに配置
-- 562bc53d44d778426a6db40c2ceb278268f0942c　　　[とある人](https://twitter.com/Ym147J)の助言から音を追加しました Library [Minim](https://github.com/ddf/Minim)
+- 562bc53d44d778426a6db40c2ceb278268f0942c　　　[とある人](https://twitter.com/Ym147J)の助言から音を追加しました Library [Minim](https://github.com/ddf/Minim)　インストール方法は[こ↑こ↓](http://wiki.bmoon.jp/wiki.cgi/Programming?page=%B2%BB%A4%F2%BB%C8%A4%A6)
