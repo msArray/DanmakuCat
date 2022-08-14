@@ -12,8 +12,8 @@ void setup() {
   fps=60;
   frameRate(fps);
   size(600, 600);
-  chara = loadImage("chara.png");
-  teki = loadImage("teki.png");
+  chara = loadImage("./assets/chara.png");
+  teki = loadImage("./assets/teki.png");
   btntf=0;
   charax=0;
   charay=0;
