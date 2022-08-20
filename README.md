@@ -12,7 +12,7 @@
 - Processing4
 - ~~fpsが60出る環境~~　(設定したfpsに合わせて遅延するように変更したため問題はない←はず)
 
-## 譜面形式
+## 譜面形式　※全☆部☆無☆駄
 ### サンプル
 ![jsom-sample](https://user-images.githubusercontent.com/85401098/184534464-87a44bdf-632e-40cd-8e37-3638ba6c39d8.PNG)
 
