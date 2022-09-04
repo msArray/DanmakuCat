@@ -9,9 +9,12 @@ int charay;
 int delayA;
 int tekix,tekiy;
 int fps;
+int frame_from_start;
+int second_from_start;
 Minim minim;
 AudioPlayer player;
 AudioPlayer starts;
+AudioPlayer bgm;
 
 void setup() {
   fps=60;
@@ -28,6 +31,7 @@ void setup() {
   minim = new Minim(this);  //初期化
   player = minim.loadFile("./assets/button.mp3");
   starts = minim.loadFile("./assets/start.mp3");
+  bgm = minim.loadFile( /*kousikisaitokara tyosakuken daijoubu"https://daniwell.com/assets/mp3/nyancat.mp3"*/ "./assets/nyancat.mp3");
   
   //botan ga osaretaka douka wo kanri
   btntf=0;
@@ -40,8 +44,10 @@ void setup() {
   tekix = 800;
   tekiy = 800;
   
-  //???
+  //zikan
   delayA=0;
+  frame_from_start=0;
+  second_from_start=0;
 }
 //functions
 void start() {
@@ -56,10 +62,6 @@ void abox(int boxx,int boxy,int boxsize,int r,int g,int b){
 
 void draw() {
   clear ();
-  charax = mouseX-25;
-  charay = mouseY-25;
-  image(chara, charax, charay, 50, 50);
-  image(teki, tekix, tekiy, 70, 70);
 
   //start Button
   int buttonx = 240;
@@ -117,6 +119,9 @@ void draw() {
       text("0",280,300);
       delayA++;
     }else{
+      bgm.play();
+      frame_from_start++;
+      println("frame"+frame_from_start);
       //Start Stage Here
       
       //Box Array
@@ -136,10 +141,15 @@ void draw() {
       amount = detailObject.getInt("amount");
       textAlign(LEFT);
       textSize(16);
+      fill(255,255,255);
       text(stagename,10,20);
       
       int[] noteX = new int[amount];
       int[] noteY = new int[amount];
+      int[] notesize = new int[amount];
+      int[] notecheck = new int[amount];
+      int[] notepop = new int[amount];
+      int[] noterm = new int[amount];
       
       JSONObject humenObject;
       humenObject = jArray.getJSONObject(1);
@@ -152,8 +162,23 @@ void draw() {
         
         noteX[i] = noteObject.getInt("x");
         noteY[i] = noteObject.getInt("y");
+        notesize[i] = noteObject.getInt("size");
+        notecheck[i] = noteObject.getInt("checktime");
+        notepop[i] = noteObject.getInt("poptime");
+        noterm[i] = noteObject.getInt("rmtime");
         
-        abox(noteX[i],noteY[i],25,255,5,255);
+        second_from_start = frame_from_start/fps;
+        
+        if(noterm[i]>second_from_start*1000){
+          if(notecheck[i]<second_from_start*1000){
+             if(notepop[i]<second_from_start*1000){
+              //add hit
+              abox(noteX[i],noteY[i],notesize[i],5,255,255);
+             }else{
+              abox(noteX[i],noteY[i],notesize[i],255,5,255);
+            }
+          }
+        }
       }
       
     }
@@ -164,4 +189,8 @@ void draw() {
   //charax = mouseX-25;
   //charay = mouseY-25;
   //image(chara, charax, charay, 50, 50);
+  charax = mouseX-25;
+  charay = mouseY-25;
+  image(chara, charax, charay, 50, 50);
+  image(teki, tekix, tekiy, 70, 70);
 }
