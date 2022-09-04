@@ -1,0 +1,32 @@
+
+[
+    {
+        "stagename":"Sample!!!",
+        "amount":"3"
+    },
+    {"humendata":
+        [
+            {
+                "x":120,
+                "y":120,
+                "checktime":3000,
+                "poptime":5000,
+                "rmtime":10000
+            },
+            {
+                "x":240,
+                "y":240,
+                "checktime":3000,
+                "poptime":5000,
+                "rmtime":10000
+            },
+            {
+                "x":360,
+                "y":360,
+                "checktime":3000,
+                "poptime":5000,
+                "rmtime":10000
+            }
+        ]
+    }
+]
