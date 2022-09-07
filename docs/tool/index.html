@@ -7,6 +7,9 @@
     <title>Stage Editor</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script>
+    <script src="./preview.js"></script>
 </head>
 <body>
     <h2>ステージ（譜面）</h2><br>
@@ -17,7 +20,10 @@
     <input type="text" id="spawntime" placeholder="スポーン開始時間(秒)"></input>
     <input type="text" id="removetime" placeholder="ブロック消える時間(秒)"></input>
     <button onclick="build()">追加</button><br>
+    <h2>プレビュー</h2>
+    <main>
+    </main>
     <h2>出力</h2>
-    <textarea id="output" style="height:200px;width:700px;"></textarea>
+    <textarea id="output" style="height:200px;width:700px;resize: none;"></textarea>
 </body>
 </html>
