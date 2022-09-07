@@ -41,3 +41,4 @@
 - 562bc53d44d778426a6db40c2ceb278268f0942c　　　[とある人](https://twitter.com/Ym147J)の助言から音を追加しました Library [Minim](https://github.com/ddf/Minim)　インストール方法は[こ↑こ↓](http://wiki.bmoon.jp/wiki.cgi/Programming?page=%B2%BB%A4%F2%BB%C8%A4%A6)  使った音源 https://maou.audio/
 - f345b8b2c0a331d7a0f4e8a21a9e4aa61914aec7　　　ステージエディターとか簡易的なwebを追加（ステージエディターはまだscriptを入れていないため動かない）
 - 523fa315a8e19a9620cd0ae8aab17ca1f43cb670　　　Json形式の対応をしてもらいました...
+- 789bdcace9233da4ff0a48c433cc1c0aa721ca7a　　　Webツールを作り上げた(PCのみ スマホだと形が崩れる)with Jquery https://jquery.com/
