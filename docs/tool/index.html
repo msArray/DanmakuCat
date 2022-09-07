@@ -5,20 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stage Editor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./script.js"></script>
 </head>
 <body>
-    <h2>初期設定</h2><br>
-    <input type="text" id="stagename" placeholder="ステージ名"></input><br>
     <h2>ステージ（譜面）</h2><br>
     <input type="text" id="spx" placeholder="スポーンX座標"></input>
     <input type="text" id="spy" placeholder="スポーンX座標"></input>
-    <input type="text" id="checktime" placeholder="標識表示開始時間"></input>
-    <input type="text" id="spawntime" placeholder="スポーン開始時間"></input>
-    <input type="text" id="removetime" placeholder="ブロック消える時間"></input>
-    <button>追加</button><br>
-    <h2>Import</h2><br>
-    <input id="file" type="file" name="file" multiple><br>
+    <input type="text" id="bsize" placeholder="大きさ"></input>
+    <input type="text" id="checktime" placeholder="標識表示開始時間(秒)"></input>
+    <input type="text" id="spawntime" placeholder="スポーン開始時間(秒)"></input>
+    <input type="text" id="removetime" placeholder="ブロック消える時間(秒)"></input>
+    <button onclick="build()">追加</button><br>
     <h2>出力</h2>
-    <textarea id="output"></textarea>
+    <textarea id="output" style="height:200px;width:700px;"></textarea>
 </body>
 </html>
