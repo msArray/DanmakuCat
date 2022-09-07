@@ -15,7 +15,7 @@
 
 ## 譜面形式
 ### サンプル
-![jsom-sample](https://user-images![test](https://user-images.githubusercontent.com/85401098/188897515-98d9b22a-f8e1-4151-a291-c4b6be4d8417.PNG)
+![jsom-sample](https://user-images.githubusercontent.com/85401098/188897515-98d9b22a-f8e1-4151-a291-c4b6be4d8417.PNG)
 
 ### 形式詳細
 #### 設定
