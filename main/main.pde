@@ -10,7 +10,7 @@ int delayA;
 int tekix,tekiy;
 int fps;
 int frame_from_start;
-int second_from_start;
+float second_from_start;
 Minim minim;
 AudioPlayer player;
 AudioPlayer starts;
@@ -55,9 +55,9 @@ void start() {
   tekiy = 80;
 }
 
-void abox(int boxx,int boxy,int boxsize,int r,int g,int b){
-  fill(r,g,b);
-  rect(boxx,boxy,boxsize,boxsize);
+void abox(int boxx,int boxy,int boxsize,int r,int g,int b,int opacity){
+  fill(r,g,b,opacity);
+  rect(300+boxx-boxsize/2,300+boxy-boxsize/2,boxsize,boxsize);
 }
 
 void draw() {
@@ -173,9 +173,11 @@ void draw() {
           if(notecheck[i]<second_from_start*1000){
              if(notepop[i]<second_from_start*1000){
               //add hit
-              abox(noteX[i],noteY[i],notesize[i],5,255,255);
+              noStroke();
+              abox(noteX[i],noteY[i],notesize[i],5,255,255,255);
              }else{
-              abox(noteX[i],noteY[i],notesize[i],255,5,255);
+              stroke(255,5,255);
+              abox(noteX[i],noteY[i],notesize[i],0,0,0,0);
             }
           }
         }
