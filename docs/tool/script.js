@@ -8,5 +8,21 @@ function build(){
         rmtime:$('#removetime').val()*1000,
     }
     console.log(box)
-    $('#output').val(JSON.stringify(box))
+    if($('#output').val()==""){
+        $('#output').val(JSON.stringify(box))
+    }else{
+        $('#output').val($('#output').val()+','+JSON.stringify(box))
+    }
 }
+function reset(){
+    $('#output').val("")
+}
+function copytx() {
+
+
+    var text = document.getElementById("output");
+    
+    text.select();
+    document.execCommand("copy");
+    
+    }
