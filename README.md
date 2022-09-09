@@ -17,6 +17,9 @@
 ### サンプル
 ![jsom-sample](https://user-images.githubusercontent.com/85401098/188897515-98d9b22a-f8e1-4151-a291-c4b6be4d8417.PNG)
 
+![Field](https://user-images.githubusercontent.com/85401098/189336777-b695b3b2-d552-4217-9e6a-f9be35423d21.png)
+
+
 ### 形式詳細
 #### 設定
 - stagename ステージ名(譜面名)
