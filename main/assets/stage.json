@@ -2,33 +2,65 @@
 [
     {
         "stagename":"Sample!!!",
-        "amount":"3"
+        "amount":"7"
     },
     {"humendata":
         [
             {
-                "x":120,
-                "y":120,
-                "size":50,
-                "checktime":3000,
-                "poptime":5000,
-                "rmtime":10000
+                "x":0,
+                "y":0,
+                "size":300,
+                "checktime":2000,
+                "poptime":4000,
+                "rmtime":6000
             },
             {
-                "x":240,
-                "y":240,
-                "size":50,
+                "x":150,
+                "y":150,
+                "size":100,
                 "checktime":3000,
                 "poptime":5000,
-                "rmtime":10000
+                "rmtime":7000
             },
             {
-                "x":360,
-                "y":360,
-                "size":50,
+                "x":-150,
+                "y":-150,
+                "size":100,
                 "checktime":3000,
                 "poptime":5000,
-                "rmtime":10000
+                "rmtime":7000
+            },
+            {
+                "x":150,
+                "y":-150,
+                "size":100,
+                "checktime":4000,
+                "poptime":5500,
+                "rmtime":7000
+            },
+            {
+                "x":-150,
+                "y":150,
+                "size":100,
+                "checktime":4000,
+                "poptime":5500,
+                "rmtime":7000
+            },
+            {
+                "x":300,
+                "y":0,
+                "size":300,
+                "checktime":5000,
+                "poptime":7000,
+                "rmtime":8500
+            },
+            {
+                "x":-300,
+                "y":0,
+                "size":300,
+                "checktime":5000,
+                "poptime":7000,
+                "rmtime":8500
             }
         ]
     }

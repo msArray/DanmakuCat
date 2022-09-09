@@ -9,7 +9,7 @@ int charay;
 int delayA;
 int tekix,tekiy;
 int fps;
-int frame_from_start;
+float frame_from_start;
 float second_from_start;
 Minim minim;
 AudioPlayer player;
@@ -31,7 +31,7 @@ void setup() {
   minim = new Minim(this);  //初期化
   player = minim.loadFile("./assets/button.mp3");
   starts = minim.loadFile("./assets/start.mp3");
-  bgm = minim.loadFile( /*kousikisaitokara tyosakuken daijoubu"https://daniwell.com/assets/mp3/nyancat.mp3"*/ "./assets/nyancat.mp3");
+  bgm = minim.loadFile( "./assets/typhoon-parade.mp3");//Song link https://dova-s.jp/bgm/play3406.html
   
   //botan ga osaretaka douka wo kanri
   btntf=0;
@@ -57,7 +57,7 @@ void start() {
 
 void abox(int boxx,int boxy,int boxsize,int r,int g,int b,int opacity){
   fill(r,g,b,opacity);
-  rect(300+boxx-boxsize/2,300+boxy-boxsize/2,boxsize,boxsize);
+  rect(300+boxx-boxsize/2,300+(-1*boxy)-boxsize/2,boxsize,boxsize);
 }
 
 void draw() {
@@ -121,7 +121,8 @@ void draw() {
     }else{
       bgm.play();
       frame_from_start++;
-      println("frame"+frame_from_start);
+      second_from_start = frame_from_start/fps;
+      println("sec:"+second_from_start);
       //Start Stage Here
       
       //Box Array
@@ -167,7 +168,6 @@ void draw() {
         notepop[i] = noteObject.getInt("poptime");
         noterm[i] = noteObject.getInt("rmtime");
         
-        second_from_start = frame_from_start/fps;
         
         if(noterm[i]>second_from_start*1000){
           if(notecheck[i]<second_from_start*1000){
