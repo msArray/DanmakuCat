@@ -9,6 +9,8 @@ int charay;
 int delayA;
 int tekix,tekiy;
 int fps;
+float score;
+int muteki;
 float frame_from_start;
 float second_from_start;
 Minim minim;
@@ -44,6 +46,12 @@ void setup() {
   tekix = 800;
   tekiy = 800;
   
+  //score
+  score = 0;
+
+  //damege wo uketatoki no mutekijikan
+  muteki = 0;
+
   //zikan
   delayA=0;
   frame_from_start=0;
@@ -122,7 +130,11 @@ void draw() {
       bgm.play();
       frame_from_start++;
       second_from_start = frame_from_start/fps;
-      println("sec:"+second_from_start);
+      
+      //log hajimattekarano zikan
+      //println("sec:"+second_from_start);
+
+
       //Start Stage Here
       
       //Box Array
@@ -144,6 +156,11 @@ void draw() {
       textSize(16);
       fill(255,255,255);
       text(stagename,10,20);
+
+      textAlign(RIGHT);
+      textSize(16);
+      fill(255,255,255);
+      text("Score: "+score+"%",550,20);
       
       int[] noteX = new int[amount];
       int[] noteY = new int[amount];
@@ -151,11 +168,16 @@ void draw() {
       int[] notecheck = new int[amount];
       int[] notepop = new int[amount];
       int[] noterm = new int[amount];
+      int[] getscore = new int[amount];// score mi syutoku 0 syutoku zumi 1 damege get 2
       
       JSONObject humenObject;
       humenObject = jArray.getJSONObject(1);
       JSONArray humenArray;
       humenArray = humenObject.getJSONArray("humendata");
+
+      for(int i = 0; i < amount; i++){
+        getscore[i] = 0;
+      }
       
       for(int i = 0; i < amount; i++){
         JSONObject noteObject;
@@ -169,18 +191,46 @@ void draw() {
         noterm[i] = noteObject.getInt("rmtime");
         
         
-        if(noterm[i]>second_from_start*1000){
-          if(notecheck[i]<second_from_start*1000){
-             if(notepop[i]<second_from_start*1000){
-              //add hit
+        if(noterm[i] > second_from_start * 1000){
+          if(notecheck[i] < second_from_start * 1000){
+             if(notepop[i] < second_from_start * 1000){
               noStroke();
-              abox(noteX[i],noteY[i],notesize[i],5,255,255,255);
+              abox( noteX[i] , noteY[i] , notesize[i] , 5 , 255 , 255 , 255 );
              }else{
               stroke(255,5,255);
               abox(noteX[i],noteY[i],notesize[i],0,0,0,0);
             }
           }
         }
+
+        //log
+        /*
+        println(300+noteX[i]-(notesize[i]/2) );
+        println(300+(-1*noteY[i])-(notesize[i]/2) );
+        println(300+noteX[i]+(notesize[i]/2));
+        println(300+(-1*noteY[i])+(notesize[i]/2) );
+        */
+
+        if( noterm[i] > second_from_start * 1000 && notepop[i] < second_from_start * 1000){
+          //hit hantei
+          if( mouseX >= 300+noteX[i]-notesize[i]/2 && mouseX <=300+noteX[i]+notesize[i]/2 ){
+            if( mouseY <= 300+(-1*noteY[i])+notesize[i]/2 && mouseY >= 300+(-1*noteY[i])-notesize[i]/2 ){
+              getscore[i] = 2;
+              //hit log
+              //println("hitting");
+            }
+          }
+        }
+        //Score keisan
+        /*
+        if(noterm[i]<second_from_start*1000){//score kasan
+          if(getscore[i]==0){
+            getscore[i]=1;
+            score += 100/amount;
+          }
+        }
+        */
+
       }
       
     }
