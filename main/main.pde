@@ -58,10 +58,12 @@ void setup() {
   second_from_start=0;
 }
 //functions
+/*
 void start() {
   tekix = 245;
   tekiy = 80;
 }
+*/
 
 void abox(int boxx,int boxy,int boxsize,int r,int g,int b,int opacity){
   fill(r,g,b,opacity);
@@ -101,8 +103,8 @@ void draw() {
     //game gamen
     
     //teki(taka) displays
-    tekix = 245;
-    tekiy = 80;
+    tekix = 300;
+    tekiy = 50;
     
     //countdown
     if(delayA<fps){
@@ -217,7 +219,7 @@ void draw() {
             if( mouseY <= 300+(-1*noteY[i])+notesize[i]/2 && mouseY >= 300+(-1*noteY[i])-notesize[i]/2 ){
               getscore[i] = 2;
               //hit log
-              //println("hitting");
+              println("hitting");
             }
           }
         }
@@ -244,5 +246,5 @@ void draw() {
   charax = mouseX-25;
   charay = mouseY-25;
   image(chara, charax, charay, 50, 50);
-  image(teki, tekix, tekiy, 70, 70);
+  image(teki, tekix-35, tekiy-35, 70, 70);
 }
