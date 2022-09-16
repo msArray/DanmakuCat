@@ -277,7 +277,8 @@ void draw() {
               if(muteki==0){
                 //get damage
                 if(score==0){
-                  //失敗演出
+                  //miss ensyutu
+
                 }else{
                   score-=10.0;
                   muteki=5*fps;
@@ -286,15 +287,6 @@ void draw() {
             }
           }
         }
-        //Score keisan
-        /*
-        if(noterm[i]<second_from_start*1000){//score kasan
-          if(getscore[i]==0){
-            getscore[i]=1;
-            score += 100/amount;
-          }
-        }
-        */
 
       }
       
@@ -304,6 +296,15 @@ void draw() {
   //Muteki jikan
   if(muteki!=0){
     muteki--;
+    if(btntf==1){
+      if(second_from_start%0.5<0.25){
+      image(chara, charax, charay, 50, 50);
+      }
+    }else{
+      image(chara, charax, charay, 50, 50);
+    }
+  }else{
+    image(chara, charax, charay, 50, 50);
   }
 
   //Chara sousa
@@ -312,6 +313,5 @@ void draw() {
   //image(chara, charax, charay, 50, 50);
   charax = mouseX-25;
   charay = mouseY-25;
-  image(chara, charax, charay, 50, 50);
   image(teki, tekix-35, tekiy-35, 70, 70);
 }
