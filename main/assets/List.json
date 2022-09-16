@@ -1,0 +1,8 @@
+[
+    {"listamount":3},
+    {"humen":[
+        {"name":"Sample!!!","path":"./assets/stage.json"},
+        {"name":"Test1","path":"./assets/stage1.json"},
+        {"name":"Test2","path":"./assets/stage2.json"}
+    ]}
+]

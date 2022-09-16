@@ -13,6 +13,7 @@ float score;
 int muteki;
 float frame_from_start;
 float second_from_start;
+String humenpath;
 Minim minim;
 AudioPlayer player;
 AudioPlayer starts;
@@ -46,8 +47,11 @@ void setup() {
   tekix = 800;
   tekiy = 800;
   
+  //humen no path
+  humenpath = "./assets/stage.json";
+
   //score
-  score = 0;
+  score = 100;
 
   //damege wo uketatoki no mutekijikan
   muteki = 0;
@@ -74,12 +78,48 @@ void draw() {
   clear ();
 
   //start Button
-  int buttonx = 240;
-  int buttony = 300;
+  int buttonx = 440;
+  int buttony = 500;
   int buttonwidth = 80;
   int buttonheight = 40;
   String text = "Start!";
   int textsize = 25;
+
+  JSONArray stageList;
+  stageList = loadJSONArray("./assets/List.json");
+      
+  JSONObject stageListObject;
+  stageListObject = stageList.getJSONObject(0);
+  int amountList = stageListObject.getInt("listamount");
+
+  JSONObject nameListObject;
+  nameListObject = stageList.getJSONObject(1);
+
+  JSONArray stageNameArray;
+  stageNameArray = nameListObject.getJSONArray("humen");
+
+  for(int i=0;i<amountList;i++){// 選曲
+    JSONObject humeninfoObject;
+    humeninfoObject = stageNameArray.getJSONObject(i);
+    String humenname = humeninfoObject.getString("name");
+
+    fill(255);
+    rect(100, i*60+60, 100, 40);
+    fill(0);
+    textAlign(CENTER);
+    textSize(20);
+    text(humenname, 100, i*60+60, 100, 40);
+
+    if(mousePressed==true){
+      if (mouseX>100 && mouseX<200 && mouseY>i*i+60 && mouseY<i*60+100) {
+        //when start is pressed
+        println("humen clicked");
+        player.play();
+        humenpath = humeninfoObject.getString("path");
+        println(humeninfoObject.getString("path"));
+      }
+    }
+  }
   
   if (btntf==0) {
     //start gamen
@@ -162,7 +202,7 @@ void draw() {
       textAlign(RIGHT);
       textSize(16);
       fill(255,255,255);
-      text("Score: "+score+"%",550,20);
+      text("Score: "+score+"pt",550,20);
       
       int[] noteX = new int[amount];
       int[] noteY = new int[amount];
@@ -170,16 +210,12 @@ void draw() {
       int[] notecheck = new int[amount];
       int[] notepop = new int[amount];
       int[] noterm = new int[amount];
-      int[] getscore = new int[amount];// score mi syutoku 0 syutoku zumi 1 damege get 2
       
       JSONObject humenObject;
       humenObject = jArray.getJSONObject(1);
       JSONArray humenArray;
       humenArray = humenObject.getJSONArray("humendata");
 
-      for(int i = 0; i < amount; i++){
-        getscore[i] = 0;
-      }
       
       for(int i = 0; i < amount; i++){
         JSONObject noteObject;
@@ -217,9 +253,17 @@ void draw() {
           //hit hantei
           if( mouseX >= 300+noteX[i]-notesize[i]/2 && mouseX <=300+noteX[i]+notesize[i]/2 ){
             if( mouseY <= 300+(-1*noteY[i])+notesize[i]/2 && mouseY >= 300+(-1*noteY[i])-notesize[i]/2 ){
-              getscore[i] = 2;
               //hit log
-              println("hitting");
+              //println("hitting");
+              if(muteki==0){
+                //get damage
+                if(score==0){
+                  //失敗演出
+                }else{
+                  score-=10.0;
+                  muteki=5*fps;
+                }
+              }
             }
           }
         }
@@ -238,6 +282,10 @@ void draw() {
     }
   }
 
+  //Muteki jikan
+  if(muteki!=0){
+    muteki--;
+  }
 
   //Chara sousa
   //charax = mouseX-25;
