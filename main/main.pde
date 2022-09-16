@@ -162,8 +162,8 @@ void draw() {
     //game gamen
     
     //teki(taka) displays
-    tekix = 300;
-    tekiy = 50;
+    //tekix = 300;
+    //tekiy = 50;
     
     //countdown
     if(delayA<fps){
@@ -278,7 +278,7 @@ void draw() {
                 //get damage
                 if(score==0){
                   //miss ensyutu
-
+                  btntf = 2;
                 }else{
                   score-=10.0;
                   muteki=5*fps;
@@ -290,6 +290,32 @@ void draw() {
 
       }
       
+    }
+  }else if(btntf == 2){
+    //gameover gamen
+    bgm.close();
+    textAlign(LEFT);
+    textSize(120);
+    fill(255,0,0);
+    textFont(pFontData);
+    text("FAILED...",20,220);
+    fill(255);
+    rect(100,400,200,110);
+    fill(0);
+    textSize(50);
+    text("GO",110,450);
+    text("BACK",110,500);
+    if(mousePressed == true){
+      if(mouseX >= 100 && mouseX <= 300 && mouseY >= 400 && mouseY <= 510){
+        //back to start
+        player = minim.loadFile("./assets/button.mp3");
+        starts = minim.loadFile("./assets/start.mp3");
+        bgm = minim.loadFile( "./assets/typhoon-parade.mp3");
+        delayA = 0;
+        frame_from_start = 0;
+        score = 100;
+        btntf = 0;
+      }
     }
   }
 
