@@ -1,7 +1,7 @@
 
 [
     {
-        "stagename":"Sample!!!",
+        "stagename":"Test1",
         "amount":"4"
     },
     {"humendata":
@@ -16,14 +16,14 @@
             },
             {
                 "x":100,
-                "y":100,
+                "y":200,
                 "size":150,
                 "checktime":1800,
                 "poptime":3000,
                 "rmtime":20000
             },
             {
-                "x":100,
+                "x":50,
                 "y":-100,
                 "size":150,
                 "checktime":1800,

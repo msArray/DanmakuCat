@@ -1,0 +1,8 @@
+[
+    {"listamount":3},
+    {"humen":[
+        {"name":"Sample!!!","path":"./assets/stage.json","sound":"./assets/typhoon-parade.mp3"},
+        {"name":"Test1","path":"./assets/stage1.json","sound":"./assets/nyancat.mp3"},
+        {"name":"Test2","path":"./assets/stage2.json","sound":"./assets/typhoon-parade.mp3"}
+    ]}
+]
