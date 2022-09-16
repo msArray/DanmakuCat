@@ -9,6 +9,8 @@ int charay;
 int delayA;
 int tekix,tekiy;
 int fps;
+PFont pFontData;
+PFont pFontNormal;
 float score;
 int muteki;
 float frame_from_start;
@@ -16,6 +18,7 @@ float second_from_start;
 String humenpath;
 Minim minim;
 AudioPlayer player;
+AudioPlayer senkyoku;
 AudioPlayer starts;
 AudioPlayer bgm;
 
@@ -25,7 +28,10 @@ void setup() {
   
   //gamen saizu ha 600*600
   size(600, 600);
-  
+
+  //font load
+  pFontData = loadFont("Arial-Black-48.vlw");
+  pFontNormal = loadFont("ArialMT-48.vlw");
   //gazou wo ro-do
   chara = loadImage("./assets/chara.png");
   teki = loadImage("./assets/teki.png");
@@ -35,6 +41,7 @@ void setup() {
   player = minim.loadFile("./assets/button.mp3");
   starts = minim.loadFile("./assets/start.mp3");
   bgm = minim.loadFile( "./assets/typhoon-parade.mp3");//Song link https://dova-s.jp/bgm/play3406.html
+  senkyoku = minim.loadFile("./assets/senkyoku.mp3");
   
   //botan ga osaretaka douka wo kanri
   btntf=0;
@@ -78,57 +85,69 @@ void draw() {
   clear ();
 
   //start Button
-  int buttonx = 440;
-  int buttony = 500;
-  int buttonwidth = 80;
-  int buttonheight = 40;
-  String text = "Start!";
-  int textsize = 25;
+    int buttonx = 440;
+    int buttony = 500;
+    int buttonwidth = 80;
+    int buttonheight = 40;
+    String text = "Start!";
+    int textsize = 25;
 
-  JSONArray stageList;
-  stageList = loadJSONArray("./assets/List.json");
-      
-  JSONObject stageListObject;
-  stageListObject = stageList.getJSONObject(0);
-  int amountList = stageListObject.getInt("listamount");
-
-  JSONObject nameListObject;
-  nameListObject = stageList.getJSONObject(1);
-
-  JSONArray stageNameArray;
-  stageNameArray = nameListObject.getJSONArray("humen");
-
-  for(int i=0;i<amountList;i++){// 選曲
-    JSONObject humeninfoObject;
-    humeninfoObject = stageNameArray.getJSONObject(i);
-    String humenname = humeninfoObject.getString("name");
-
+    if (btntf==0) {
+    //Logo
     fill(255);
-    rect(100, i*60+60, 100, 40);
-    fill(0);
-    textAlign(CENTER);
-    textSize(20);
-    text(humenname, 100, i*60+60, 100, 40);
+    textSize(30);
+    textFont(pFontData);
+    text("Dammaku",400,100);
+    text("Cat",500,150);
+    textFont(pFontNormal);
 
-    if(mousePressed==true){
-      if (mouseX>100 && mouseX<200 && mouseY>i*i+60 && mouseY<i*60+100) {
-        //when start is pressed
-        println("humen clicked");
-        player.play();
-        humenpath = humeninfoObject.getString("path");
-        println(humeninfoObject.getString("path"));
+
+    JSONArray stageList;// 選曲
+    stageList = loadJSONArray("./assets/List.json");
+
+    JSONObject stageListObject;
+    stageListObject = stageList.getJSONObject(0);
+    int amountList = stageListObject.getInt("listamount");
+
+    JSONObject nameListObject;
+    nameListObject = stageList.getJSONObject(1);
+
+    JSONArray stageNameArray;
+    stageNameArray = nameListObject.getJSONArray("humen");
+
+    for(int i=0;i<amountList;i++){
+      JSONObject humeninfoObject;
+      humeninfoObject = stageNameArray.getJSONObject(i);
+      String humenname = humeninfoObject.getString("name");
+
+      fill(255);
+      rect(100, i*60+60, 100, 40);
+      fill(0);
+      textAlign(CENTER);
+      textSize(20);
+      text(humenname, 100, i*60+70, 100, 40);
+
+      if(mousePressed==true){
+        if (mouseX>100 && mouseX<200 && mouseY>i*60+60 && mouseY<i*60+100) {
+          //when start is pressed
+          println("humen clicked");
+          senkyoku.rewind();
+          senkyoku.play();
+          humenpath = humeninfoObject.getString("path");
+          println(humeninfoObject.getString("path"));
+          bgm = minim.loadFile( humeninfoObject.getString("sound"));
+        }
       }
     }
-  }
-  
-  if (btntf==0) {
+
+
     //start gamen
     fill(255);
     rect(buttonx, buttony, buttonwidth, buttonheight);
     fill(0);
     textAlign(CENTER);
     textSize(textsize);
-    text(text, buttonx, buttony, buttonwidth, buttonheight);
+    text(text, buttonx, buttony+10, buttonwidth, buttonheight);
     if (mousePressed==true) {
       if (mouseX>buttonx && mouseX<buttonx+buttonwidth && mouseY>buttony && mouseY<buttony+buttonheight) {
         //when start is pressed
@@ -186,7 +205,7 @@ void draw() {
       int amount;
       
       JSONArray jArray;
-      jArray = loadJSONArray("./assets/stage.json");
+      jArray = loadJSONArray(humenpath);
       
       JSONObject detailObject;
       detailObject = jArray.getJSONObject(0);
