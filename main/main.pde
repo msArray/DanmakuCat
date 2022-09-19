@@ -12,16 +12,24 @@ int tekix,tekiy;
 int fps;
 PFont pFontData;
 PFont pFontNormal;
-int score;
+float score;
 int muteki;
 float frame_from_start;
 float second_from_start;
 String humenpath;
+int songlength;
+JSONArray stageList;
+JSONObject stageListObject;
+int amountList;
+JSONObject nameListObject;
+JSONArray stageNameArray;
 Minim minim;
 AudioPlayer player;
 AudioPlayer senkyoku;
 AudioPlayer starts;
 AudioPlayer bgm;
+
+
 
 void setup() {
   fps=60;
@@ -58,9 +66,11 @@ void setup() {
   
   //humen no path
   humenpath = "./assets/stage.json";
+  
+  songlength = 94;
 
   //score
-  score = 5;
+  score = 100;
 
   //damege wo uketatoki no mutekijikan
   muteki = 0;
@@ -69,6 +79,19 @@ void setup() {
   delayA=0;
   frame_from_start=0;
   second_from_start=0;
+  
+  //JSONArray stageList;// 選曲
+  stageList = loadJSONArray("./assets/List.json");
+  
+  //JSONObject stageListObject;
+  stageListObject = stageList.getJSONObject(0);
+  amountList = stageListObject.getInt("listamount");
+  
+  //JSONObject nameListObject;
+  nameListObject = stageList.getJSONObject(1);
+  
+  //JSONArray stageNameArray;
+  stageNameArray = nameListObject.getJSONArray("humen");
 }
 //functions
 /*
@@ -87,14 +110,14 @@ void draw() {
   clear ();
 
   //start Button
-    int buttonx = 440;
-    int buttony = 500;
-    int buttonwidth = 80;
-    int buttonheight = 40;
-    String text = "Start!";
-    int textsize = 25;
-
-    if (btntf==0) {
+  int buttonx = 440;
+  int buttony = 500;
+  int buttonwidth = 80;
+  int buttonheight = 40;
+  String text = "Start!";
+  int textsize = 25;
+  
+  if (btntf==0) {
     //Logo
     fill(255);
     textSize(30);
@@ -103,24 +126,11 @@ void draw() {
     text("Cat",500,150);
     textFont(pFontNormal);
 
-
-    JSONArray stageList;// 選曲
-    stageList = loadJSONArray("./assets/List.json");
-
-    JSONObject stageListObject;
-    stageListObject = stageList.getJSONObject(0);
-    int amountList = stageListObject.getInt("listamount");
-
-    JSONObject nameListObject;
-    nameListObject = stageList.getJSONObject(1);
-
-    JSONArray stageNameArray;
-    stageNameArray = nameListObject.getJSONArray("humen");
-
     for(int i=0;i<amountList;i++){
       JSONObject humeninfoObject;
       humeninfoObject = stageNameArray.getJSONObject(i);
       String humenname = humeninfoObject.getString("name");
+      
 
       fill(255);
       rect(100, i*60+60, 100, 40);
@@ -137,13 +147,13 @@ void draw() {
           senkyoku.play();
           humenpath = humeninfoObject.getString("path");
           println(humeninfoObject.getString("path"));
+          songlength = humeninfoObject.getInt("length");
           bgm = minim.loadFile( humeninfoObject.getString("sound"));
         }
       }
     }
 
 
-    //start gamen
     fill(255);
     rect(buttonx, buttony, buttonwidth, buttonheight);
     fill(0);
@@ -164,8 +174,8 @@ void draw() {
     //game gamen
     
     //teki(taka) displays
-    tekix = 300;
-    tekiy = 50;
+    //tekix = 300;
+    //tekiy = 50;
     
     //countdown
     if(delayA<fps){
@@ -194,13 +204,16 @@ void draw() {
       frame_from_start++;
       second_from_start = frame_from_start/fps;
       
+      
+      if(second_from_start > songlength){
+        btntf = 3;
+      }
+      
       //log hajimattekarano zikan
       //println("sec:"+second_from_start);
 
 
       //Start Stage Here
-
-      
       
       //Box Array
       //int [] boxes;
@@ -284,9 +297,9 @@ void draw() {
                 //get damage
                 if(score==0){
                   //miss ensyutu
-
+                  btntf = 2;
                 }else{
-                  score-=1;
+                  score-=10.0;
                   muteki=5*fps;
                 }
               }
@@ -297,7 +310,62 @@ void draw() {
       }
       
     }
+  }else if(btntf == 2){
+    //gameover gamen
+    bgm.close();
+    textAlign(LEFT);
+    textSize(120);
+    fill(255,0,0);
+    textFont(pFontData);
+    text("FAILED...",20,220);
+    fill(255);
+    rect(100,400,200,110);
+    fill(0);
+    textSize(50);
+    text("GO",110,450);
+    text("BACK",110,500);
+    if(mousePressed == true){
+      if(mouseX >= 100 && mouseX <= 300 && mouseY >= 400 && mouseY <= 510){
+        //back to start
+        player = minim.loadFile("./assets/button.mp3");
+        starts = minim.loadFile("./assets/start.mp3");
+        bgm = minim.loadFile( "./assets/typhoon-parade.mp3");
+        delayA = 0;
+        frame_from_start = 0;
+        score = 100;
+        songlength = 94;
+        btntf = 0;
+      }
+    }
+  }else if(btntf == 3){
+    //gamecler gamen
+    bgm.close();
+    textAlign(LEFT);
+    textSize(120);
+    fill(0,255,220);
+    textFont(pFontData);
+    text("CLEARED!!!",20,220);
+    fill(255);
+    rect(100,400,200,110);
+    fill(0);
+    textSize(50);
+    text("GO",110,450);
+    text("BACK",110,500);
+    if(mousePressed == true){
+      if(mouseX >= 100 && mouseX <= 300 && mouseY >= 400 && mouseY <= 510){
+        //back to start
+        player = minim.loadFile("./assets/button.mp3");
+        starts = minim.loadFile("./assets/start.mp3");
+        bgm = minim.loadFile( "./assets/typhoon-parade.mp3");
+        delayA = 0;
+        frame_from_start = 0;
+        score = 100;
+        songlength = 94;
+        btntf = 0;
+      }
+    }
   }
+    
 
   //Muteki jikan
   if(muteki!=0){
@@ -321,4 +389,3 @@ void draw() {
   charay = mouseY-25;
   image(teki, tekix-35, tekiy-35, 70, 70);
 }
-
