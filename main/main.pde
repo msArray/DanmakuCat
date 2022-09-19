@@ -70,7 +70,7 @@ void setup() {
   songlength = 94;
 
   //score
-  score = 100;
+  score = 5;
 
   //damege wo uketatoki no mutekijikan
   muteki = 0;
