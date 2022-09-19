@@ -12,7 +12,7 @@ int tekix,tekiy;
 int fps;
 PFont pFontData;
 PFont pFontNormal;
-float score;
+int score;
 int muteki;
 float frame_from_start;
 float second_from_start;
@@ -299,7 +299,7 @@ void draw() {
                   //miss ensyutu
                   btntf = 2;
                 }else{
-                  score-=10.0;
+                  score-=1;
                   muteki=5*fps;
                 }
               }
