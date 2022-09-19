@@ -3,6 +3,7 @@ import ddf.minim.*;
 //chara,teki...image of chara and teki
 PImage chara;
 PImage teki;
+PImage lifeimg;
 int btntf;
 int charax;
 int charay;
@@ -43,6 +44,7 @@ void setup() {
   //gazou wo ro-do
   chara = loadImage("./assets/chara.png");
   teki = loadImage("./assets/teki.png");
+  lifeimg = loadImage("./assets/life.png");
   
   //oto wo ro-do
   minim = new Minim(this);  //初期化
@@ -233,10 +235,12 @@ void draw() {
       fill(255,255,255);
       text(stagename,10,20);
 
+      image(lifeimg, 510, 2, 20, 20);
+
       textAlign(RIGHT);
       textSize(16);
       fill(255,255,255);
-      text("Score: "+score+"pt",550,20);
+      text("×"+score,550,20);
       
       int[] noteX = new int[amount];
       int[] noteY = new int[amount];
