@@ -10,6 +10,7 @@ int charay;
 int delayA;
 int tekix,tekiy;
 int fps;
+int selected_song;
 PFont pFontData;
 PFont pFontNormal;
 int score;
@@ -75,6 +76,9 @@ void setup() {
   //damege wo uketatoki no mutekijikan
   muteki = 0;
 
+  //sentakuchu no kyoku bangou 0 kara
+  selected_song = 0;
+
   //zikan
   delayA=0;
   frame_from_start=0;
@@ -126,6 +130,9 @@ void draw() {
     text("Cat",500,150);
     textFont(pFontNormal);
 
+    fill(255,0,0);
+    triangle(60, 60*selected_song+60, 60, 60*selected_song+100, 90, 60*selected_song+80);
+
     for(int i=0;i<amountList;i++){
       JSONObject humeninfoObject;
       humeninfoObject = stageNameArray.getJSONObject(i);
@@ -143,6 +150,7 @@ void draw() {
         if (mouseX>100 && mouseX<200 && mouseY>i*60+60 && mouseY<i*60+100) {
           //when start is pressed
           println("humen clicked");
+          selected_song = i;
           senkyoku.rewind();
           senkyoku.play();
           humenpath = humeninfoObject.getString("path");
