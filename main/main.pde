@@ -149,12 +149,14 @@ void draw() {
       if(mousePressed==true){
         if (mouseX>100 && mouseX<200 && mouseY>i*60+60 && mouseY<i*60+100) {
           //when start is pressed
-          println("humen clicked");
+          //println("humen clicked");
+          if(i!=selected_song){
+            senkyoku.rewind();
+            senkyoku.play();
+          }
           selected_song = i;
-          senkyoku.rewind();
-          senkyoku.play();
           humenpath = humeninfoObject.getString("path");
-          println(humeninfoObject.getString("path"));
+          //println(humeninfoObject.getString("path"));
           songlength = humeninfoObject.getInt("length");
           bgm = minim.loadFile( humeninfoObject.getString("sound"));
         }
