@@ -41,7 +41,7 @@ void setup() {
 
   //font load
   pFontData = loadFont("Arial-Black-48.vlw");
-  pFontNormal = loadFont("ArialMT-48.vlw");
+  pFontNormal = loadFont("Meiryo-48.vlw");
   //gazou wo ro-do
   chara = loadImage("./assets/chara.png");
   teki = loadImage("./assets/teki.png");
@@ -126,12 +126,13 @@ void draw() {
     fill(255);
     textSize(30);
     textFont(pFontData);
-    text("Dammaku",400,100);
-    text("Cat",500,150);
+    text("SQUARE",360,100);
+    text("CAT",420,150);
+    text("SURVIVAL",460,200);
     textFont(pFontNormal);
 
     fill(255,0,0);
-    triangle(60, 60*selected_song+60, 60, 60*selected_song+100, 90, 60*selected_song+80);
+    triangle(10, 60*selected_song+60, 10, 60*selected_song+100, 40, 60*selected_song+80);
 
     for(int i=0;i<amountList;i++){
       JSONObject humeninfoObject;
@@ -140,11 +141,19 @@ void draw() {
       
 
       fill(255);
-      rect(100, i*60+60, 100, 40);
+      rect(50, i*60+60, 160, 40);
       fill(0);
       textAlign(CENTER);
-      textSize(20);
-      text(humenname, 100, i*60+70, 100, 40);
+      int fntsize = 20;
+      if(humenname.length()<5){
+        fntsize = 20;
+      }else if(humenname.length()<10){
+        fntsize = 16;
+      }else{
+        fntsize = 15;
+      }
+      textSize(fntsize);
+      text(humenname, 50, i*60+70, 160, 40);
 
       if(mousePressed==true){
         if (mouseX>100 && mouseX<200 && mouseY>i*60+60 && mouseY<i*60+100) {
