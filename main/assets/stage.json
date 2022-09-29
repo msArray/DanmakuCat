@@ -2,7 +2,7 @@
 [
     {
         "stagename":"タイフーンパレード",
-        "amount":"4"
+        "amount":"8"
     },
     {"humendata":
         [
@@ -37,7 +37,11 @@
                 "checktime":1800,
                 "poptime":3000,
                 "rmtime":20000
-            }
+            },
+            {"x":200,"y":200,"size":200,"checktime":4000,"poptime":4800,"rmtime":6000},
+            {"x":-200,"y":200,"size":200,"checktime":4000,"poptime":4800,"rmtime":6000},
+            {"x":-200,"y":-200,"size":200,"checktime":4000,"poptime":4800,"rmtime":6000},
+            {"x":200,"y":-200,"size":200,"checktime":4000,"poptime":4800,"rmtime":6000}
         ]
     }
 ]
