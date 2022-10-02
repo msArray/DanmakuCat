@@ -292,8 +292,8 @@ void draw() {
               noStroke();
               abox( noteX[i] , noteY[i] , notesize[i] , 5 , 255 , 255 , 255 );
              }else{
-              stroke(255,5,255);
-              abox(noteX[i],noteY[i],notesize[i],0,0,0,0);
+              stroke(5,255,255);
+              abox(noteX[i],noteY[i],notesize[i],5,255,255,75);
             }
           }
         }
