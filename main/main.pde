@@ -150,7 +150,7 @@ void draw() {
       }else if(humenname.length()<10){
         fntsize = 16;
       }else{
-        fntsize = 15;
+        fntsize = 13;
       }
       textSize(fntsize);
       text(humenname, 50, i*60+70, 160, 40);
@@ -229,7 +229,7 @@ void draw() {
       }
       
       //log hajimattekarano zikan
-      //println("sec:"+second_from_start);
+      println("sec:"+second_from_start);
 
 
       //Start Stage Here
@@ -284,7 +284,6 @@ void draw() {
         notecheck[i] = noteObject.getInt("checktime");
         notepop[i] = noteObject.getInt("poptime");
         noterm[i] = noteObject.getInt("rmtime");
-        
         
         if(noterm[i] > second_from_start * 1000){
           if(notecheck[i] < second_from_start * 1000){
@@ -378,7 +377,7 @@ void draw() {
         bgm = minim.loadFile( "./assets/typhoon-parade.mp3");
         delayA = 0;
         frame_from_start = 0;
-        score = 100;
+        score = 5;
         songlength = 94;
         btntf = 0;
       }
