@@ -290,10 +290,10 @@ void draw() {
           if(notecheck[i] < second_from_start * 1000){
              if(notepop[i] < second_from_start * 1000){
               noStroke();
-              abox( noteX[i] , noteY[i] , notesize[i] , 5 , 255 , 255 , 255 );
+              abox( noteX[i] , noteY[i] , notesize[i] , 0 , 255 , 255 , 255 );
              }else{
-              stroke(5,255,255);
-              abox(noteX[i],noteY[i],notesize[i],5,255,255,75);
+              stroke(255,0,255);
+              abox(noteX[i],noteY[i],notesize[i],255,0,255,75);
             }
           }
         }
