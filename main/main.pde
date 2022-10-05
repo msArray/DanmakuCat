@@ -29,15 +29,18 @@ AudioPlayer player;
 AudioPlayer senkyoku;
 AudioPlayer starts;
 AudioPlayer bgm;
+final int SIZE = 600;
+final int TOP_BAR = 100;
+JSONArray jArray;
+JSONObject detailObject;
 
-
+void settings() {
+  size(SIZE, SIZE + TOP_BAR);
+}
 
 void setup() {
   fps=60;
   frameRate(fps);
-  
-  //gamen saizu ha 600*600
-  size(600, 600);
 
   //font load
   pFontData = loadFont("Arial-Black-48.vlw");
@@ -107,7 +110,7 @@ void start() {
 
 void abox(int boxx,int boxy,int boxsize,int r,int g,int b,int opacity){
   fill(r,g,b,opacity);
-  rect(300+boxx-boxsize/2,300+(-1*boxy)-boxsize/2,boxsize,boxsize);
+  rect(300+boxx-boxsize/2,300+(-1*boxy)-boxsize/2+TOP_BAR,boxsize,boxsize);
 }
 
 void draw() {
@@ -120,6 +123,9 @@ void draw() {
   int buttonheight = 40;
   String text = "Start!";
   int textsize = 25;
+  
+  charax = mouseX-25;
+  charay = mouseY-25;
   
   if (btntf==0) {
     //Logo
@@ -184,6 +190,8 @@ void draw() {
         //when start is pressed
         println("clicked");
         player.play();
+        jArray = loadJSONArray(humenpath);
+        detailObject = jArray.getJSONObject(0);
         btntf=1;
       } else {
         btntf=0;
@@ -195,6 +203,13 @@ void draw() {
     //teki(taka) displays
     //tekix = 300;
     //tekiy = 50;
+    //kyara not on the topbar
+    if(mouseY <= 100){
+      charay = 75;
+    }
+    
+    String stagename;
+    int amount;
     
     //countdown
     if(delayA<fps){
@@ -237,29 +252,30 @@ void draw() {
       //Box Array
       //int [] boxes;
       
-      String stagename;
-      int amount;
       
-      JSONArray jArray;
-      jArray = loadJSONArray(humenpath);
       
-      JSONObject detailObject;
-      detailObject = jArray.getJSONObject(0);
+      //JSONArray jArray;
+      //jArray = loadJSONArray(humenpath);
+      
+      //JSONObject detailObject;
+      //detailObject = jArray.getJSONObject(0);
       
       //stagename wo hyouji
-      stagename = detailObject.getString("stagename");
+      //stagename = detailObject.getString("stagename");
+      //amount = detailObject.getInt("amount");
+      //textAlign(LEFT);
+      //textSize(16);
+      //fill(255,255,255);
+      //text(stagename,10,20);
+
+      //image(lifeimg, 510, 2, 20, 20);
+
+      //textAlign(RIGHT);
+      //textSize(16);
+      //fill(255,255,255);
+      //text("×"+score,550,20);
+      
       amount = detailObject.getInt("amount");
-      textAlign(LEFT);
-      textSize(16);
-      fill(255,255,255);
-      text(stagename,10,20);
-
-      image(lifeimg, 510, 2, 20, 20);
-
-      textAlign(RIGHT);
-      textSize(16);
-      fill(255,255,255);
-      text("×"+score,550,20);
       
       int[] noteX = new int[amount];
       int[] noteY = new int[amount];
@@ -308,7 +324,7 @@ void draw() {
         if( noterm[i] > second_from_start * 1000 && notepop[i] < second_from_start * 1000){
           //hit hantei
           if( mouseX >= 300+noteX[i]-notesize[i]/2 && mouseX <=300+noteX[i]+notesize[i]/2 ){
-            if( mouseY <= 300+(-1*noteY[i])+notesize[i]/2 && mouseY >= 300+(-1*noteY[i])-notesize[i]/2 ){
+            if( charay+25 <= 300+(-1*noteY[i])+notesize[i]/2+TOP_BAR && charay+25 >= 300+(-1*noteY[i])-notesize[i]/2+TOP_BAR ){
               //hit log
               //println("hitting");
               if(muteki==0){
@@ -327,7 +343,36 @@ void draw() {
 
       }
       
+      
+      
     }
+    
+    if(muteki != 0){
+      muteki--;
+      if(second_from_start%0.5<0.25){
+        image(chara, charax, charay, 50, 50);
+      }
+    }else{
+      image(chara, charax,charay ,50 ,50);
+    }
+    
+    //draw top bar
+    fill(99,252,111);
+    noStroke();
+    rect(-10,-10,SIZE+20,TOP_BAR+10);
+    //life title text
+    stagename = detailObject.getString("stagename");
+    textAlign(LEFT);
+    textSize(24);
+    fill(0);
+    text(stagename,10,20);
+
+    image(lifeimg, 510, 2, 20, 20);
+    textAlign(RIGHT);
+    textSize(16);
+    fill(0);
+    text("×"+score,550,20);
+    
   }else if(btntf == 2){
     //gameover gamen
     bgm.close();
@@ -383,27 +428,48 @@ void draw() {
       }
     }
   }
+  
+  
+
     
-
   //Muteki jikan
-  if(muteki!=0){
-    muteki--;
-    if(btntf==1){
-      if(second_from_start%0.5<0.25){
-      image(chara, charax, charay, 50, 50);
-      }
-    }else{
-      image(chara, charax, charay, 50, 50);
-    }
-  }else{
-    image(chara, charax, charay, 50, 50);
+  //if(muteki!=0){
+  //  muteki--;
+  //  if(btntf==1){
+  //    if(second_from_start%0.5<0.25){
+  //    image(chara, charax, charay, 50, 50);
+  //    }
+  //  }else{
+  //    image(chara, charax, charay, 50, 50);
+  //  }
+  //}else{
+  //  image(chara, charax, charay, 50 ,50);
+  //}
+  
+  
+  
+  
+  
+  if(btntf != 1){
+    image(chara, charax,charay ,50 ,50);
   }
+  
+  
+  
+  
+  
+  
+  
 
-  //Chara sousa
-  //charax = mouseX-25;
-  //charay = mouseY-25;
-  //image(chara, charax, charay, 50, 50);
-  charax = mouseX-25;
-  charay = mouseY-25;
-  image(teki, tekix-35, tekiy-35, 70, 70);
+  ////Chara hyouji
+  //if(btntf != 1){
+  //  charax = mouseX-25;
+  //  charay = mouseY-25;
+  //  image(teki, tekix-35, tekiy-35, 70, 70);
+  //}else{
+  //  if(mouseY <= 100){
+  //    image(teki, tekix-35, 100, 70, 70);
+  //  }
+  //  image(teki, tekix-35, tekiy-35, 70, 70);
+  //}
 }
