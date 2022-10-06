@@ -108,9 +108,13 @@ void start() {
 }
 */
 
-void abox(int boxx,int boxy,int boxsize,int r,int g,int b,int opacity){
+void abox(int boxx,int boxy,int boxsize,int r,int g,int b,int opacity, int id){
   fill(r,g,b,opacity);
   rect(300+boxx-boxsize/2,300+(-1*boxy)-boxsize/2+TOP_BAR,boxsize,boxsize);
+  textAlign(CENTER);
+  fill(255);
+  textSize(20);
+  text(id, 300+boxx, 300+(-1*boxy)+TOP_BAR);
 }
 
 void draw() {
@@ -290,7 +294,7 @@ void draw() {
       humenArray = humenObject.getJSONArray("humendata");
 
       
-      for(int i = 0; i < amount; i++){
+      for(int i = amount-1; i >= 0; i--){
         JSONObject noteObject;
         noteObject = humenArray.getJSONObject(i);
         
@@ -305,10 +309,10 @@ void draw() {
           if(notecheck[i] < second_from_start * 1000){
              if(notepop[i] < second_from_start * 1000){
               noStroke();
-              abox( noteX[i] , noteY[i] , notesize[i] , 0 , 255 , 255 , 255 );
+              abox( noteX[i] , noteY[i] , notesize[i] , 0 , 255 , 255 , 255, i+1 );
              }else{
               stroke(255,0,255);
-              abox(noteX[i],noteY[i],notesize[i],255,0,255,75);
+              abox(noteX[i],noteY[i],notesize[i],255,0,255,75, i+1);
             }
           }
         }
