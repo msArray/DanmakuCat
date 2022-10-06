@@ -2,46 +2,15 @@
 [
     {
         "stagename":"タイフーンパレード",
-        "amount":"8"
+        "amount":"4"
     },
     {"humendata":
         [
-            {
-                "x":-100,
-                "y":-100,
-                "size":150,
-                "checktime":1800,
-                "poptime":3000,
-                "rmtime":20000
-            },
-            {
-                "x":100,
-                "y":100,
-                "size":150,
-                "checktime":1800,
-                "poptime":3000,
-                "rmtime":20000
-            },
-            {
-                "x":100,
-                "y":-100,
-                "size":150,
-                "checktime":1800,
-                "poptime":3000,
-                "rmtime":20000
-            },
-            {
-                "x":-100,
-                "y":100,
-                "size":150,
-                "checktime":1800,
-                "poptime":3000,
-                "rmtime":20000
-            },
-            {"x":200,"y":200,"size":200,"checktime":4000,"poptime":4800,"rmtime":6000},
-            {"x":-200,"y":200,"size":200,"checktime":4000,"poptime":4800,"rmtime":6000},
-            {"x":-200,"y":-200,"size":200,"checktime":4000,"poptime":4800,"rmtime":6000},
-            {"x":200,"y":-200,"size":200,"checktime":4000,"poptime":4800,"rmtime":6000}
+            {"x":-120,"y":120,"size":150,"checktime":0,"poptime":1500,"rmtime":4500},
+            {"x":120,"y":120,"size":150,"checktime":0,"poptime":2250,"rmtime":4500},
+            {"x":-120,"y":-120,"size":150,"checktime":0,"poptime":3000,"rmtime":4500},
+            {"x":120,"y":-120,"size":150,"checktime":0,"poptime":3750,"rmtime":4500}
+            
         ]
     }
 ]
