@@ -41,7 +41,7 @@
             {"x":200,"y":200,"size":200,"checktime":4000,"poptime":4800,"rmtime":6000},
             {"x":-200,"y":200,"size":200,"checktime":4000,"poptime":4800,"rmtime":6000},
             {"x":-200,"y":-200,"size":200,"checktime":4000,"poptime":4800,"rmtime":6000},
-            {"x":200,"y":-200,"size":200,"checktime":4000,"poptime":4800,"rmtime":6000}
+            {"x":200,"y":-200,"size":200,"checktime":4000,"poptime":4800,"rmtime":60000}
         ]
     }
 ]
