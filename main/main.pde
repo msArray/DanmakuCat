@@ -279,7 +279,13 @@ void draw() {
       //fill(255,255,255);
       //text("×"+score,550,20);
       
-      amount = detailObject.getInt("amount");
+      JSONObject humenObject;
+      humenObject = jArray.getJSONObject(1);
+      JSONArray humenArray;
+      humenArray = humenObject.getJSONArray("humendata");
+      
+      //amount = detailObject.getInt("amount");
+      amount = humenArray.size();
       
       int[] noteX = new int[amount];
       int[] noteY = new int[amount];
@@ -288,10 +294,7 @@ void draw() {
       int[] notepop = new int[amount];
       int[] noterm = new int[amount];
       
-      JSONObject humenObject;
-      humenObject = jArray.getJSONObject(1);
-      JSONArray humenArray;
-      humenArray = humenObject.getJSONArray("humendata");
+
 
       
       for(int i = amount-1; i >= 0; i--){
