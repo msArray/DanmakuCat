@@ -219,23 +219,23 @@ void draw() {
     if(delayA<fps){
       fill(255);
       textSize(100);
-      text("3", 280, 300);
+      text("3", SIZE/2+20, SIZE/2+TOP_BAR);
       delayA++;
     }else if(delayA<fps*2){
       fill(255);
       textSize(100);
-      text("2", 280, 300);
+      text("2", SIZE/2+20, SIZE/2+TOP_BAR);
       delayA++;
     }else if(delayA<fps*3){
       fill(255);
       textSize(100);
-      text("1",280,300);
+      text("1",SIZE/2+20,SIZE/2+TOP_BAR);
       delayA++;
     }else if(delayA<fps*4){
       starts.play();
       fill(255);
       textSize(100);
-      text("0",280,300);
+      text("0",SIZE/2+20,SIZE/2+TOP_BAR);
       delayA++;
     }else{
       bgm.play();
