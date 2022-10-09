@@ -16,10 +16,12 @@
     <input type="text" id="spx" placeholder="スポーンX座標"></input>
     <input type="text" id="spy" placeholder="スポーンY座標"></input>
     <input type="text" id="bsize" placeholder="大きさ"></input>
-    <input type="text" id="checktime" placeholder="標識表示開始時間(秒)"></input>
-    <input type="text" id="spawntime" placeholder="スポーン開始時間(秒)"></input>
-    <input type="text" id="removetime" placeholder="ブロック消える時間(秒)"></input>
-    <button onclick="build()">追加</button><br>
+    <input type="text" id="checktime" placeholder="標識表示開始時間(ms)"></input>
+    <input type="text" id="spawntime" placeholder="スポーン開始時間(ms)"></input>
+    <input type="text" id="removetime" placeholder="ブロック消える時間(ms)"></input>
+    <button onclick="build()">追加</button><button onclick="previewadd()">プレビューに保存</button><br>
+    <textarea id="pren" style="height:200px;width:700px;resize: none;"></textarea>
+    <br>
     <h2>プレビュー</h2>
     <main>
     </main>
