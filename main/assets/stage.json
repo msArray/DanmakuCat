@@ -174,7 +174,7 @@
             {"x":-250,"y":250,"size":100,"checktime":21750,"poptime":22125,"rmtime":22500},
             {"x":250,"y":250,"size":100,"checktime":21750,"poptime":22125,"rmtime":22500},
             {"x":-250,"y":-250,"size":100,"checktime":21750,"poptime":22125,"rmtime":22500},
-            {"x":250,"y":-250,"size":100,"checktime":21750,"poptime":22125,"rmtime":22500},
+            {"x":250,"y":-250,"size":100,"checktime":21750,"poptime":22125,"rmtime":22500}
             
 
         ]

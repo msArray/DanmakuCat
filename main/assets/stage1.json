@@ -2,42 +2,167 @@
 [
     {
         "stagename":"NyanCat",
-        "amount":"4"
+        "amount":"106"
     },
     {"humendata":
         [
-            {
-                "x":-100,
-                "y":-100,
-                "size":150,
-                "checktime":1800,
-                "poptime":3000,
-                "rmtime":20000
-            },
-            {
-                "x":100,
-                "y":200,
-                "size":150,
-                "checktime":1800,
-                "poptime":3000,
-                "rmtime":20000
-            },
-            {
-                "x":50,
-                "y":-100,
-                "size":150,
-                "checktime":1800,
-                "poptime":3000,
-                "rmtime":20000
-            },
-            {
-                "x":-100,
-                "y":100,
-                "size":150,
-                "checktime":1800,
-                "poptime":3000,
-                "rmtime":20000
-            }
+            {"x":-50,"y":50,"size":100,"checktime":1200,"poptime":2050,"rmtime":2250},
+            {"x":-50,"y":-50,"size":100,"checktime":1200,"poptime":2050,"rmtime":2250},
+            {"x":50,"y":-50,"size":100,"checktime":1200,"poptime":2050,"rmtime":2250},
+            {"x":50,"y":50,"size":100,"checktime":1200,"poptime":2050,"rmtime":2250},
+
+
+            {"x":225,"y":225,"size":150,"checktime":3180,"poptime":3480,"rmtime":4400},
+            {"x":225,"y":-225,"size":150,"checktime":3180,"poptime":3480,"rmtime":4400},
+            {"x":-225,"y":-225,"size":150,"checktime":3180,"poptime":3480,"rmtime":4400},
+            {"x":-225,"y":225,"size":150,"checktime":3180,"poptime":3480,"rmtime":4400},
+
+            {"x":225,"y":75,"size":150,"checktime":4000,"poptime":4400,"rmtime":5400},
+            {"x":-225,"y":75,"size":150,"checktime":4000,"poptime":4400,"rmtime":5400},
+            {"x":-225,"y":-75,"size":150,"checktime":4000,"poptime":4400,"rmtime":5400},
+            {"x":225,"y":-75,"size":150,"checktime":4000,"poptime":4400,"rmtime":5400},
+            {"x":75,"y":-75,"size":150,"checktime":4000,"poptime":4400,"rmtime":5400},
+            {"x":-75,"y":-75,"size":150,"checktime":4000,"poptime":4400,"rmtime":5400},
+            {"x":-75,"y":75,"size":150,"checktime":4000,"poptime":4400,"rmtime":5400},
+            {"x":75,"y":75,"size":150,"checktime":4000,"poptime":4400,"rmtime":5400},
+
+            {"x":-75,"y":225,"size":150,"checktime":4860,"poptime":5180,"rmtime":5400},
+            {"x":75,"y":225,"size":150,"checktime":4860,"poptime":5180,"rmtime":5400},
+            {"x":-75,"y":-225,"size":150,"checktime":4860,"poptime":5180,"rmtime":5400},
+            {"x":75,"y":-225,"size":150,"checktime":4860,"poptime":5180,"rmtime":5400},
+
+            {"x":0,"y":-300,"size":300,"checktime":5400,"poptime":5780,"rmtime":6280},
+            {"x":0,"y":300,"size":300,"checktime":6220,"poptime":6580,"rmtime":7080},
+            {"x":-300,"y":0,"size":300,"checktime":7020,"poptime":7380,"rmtime":7680},
+            {"x":300,"y":0,"size":300,"checktime":7620,"poptime":7880,"rmtime":8380},
+
+
+
+            {"x":75,"y":75,"size":150,"checktime":9000,"poptime":9800,"rmtime":10600},
+            {"x":75,"y":-75,"size":150,"checktime":9000,"poptime":9800,"rmtime":10600},
+            {"x":-75,"y":-75,"size":150,"checktime":9000,"poptime":9800,"rmtime":10600},
+            {"x":-75,"y":75,"size":150,"checktime":9000,"poptime":9800,"rmtime":10600},
+
+            {"x":-75,"y":225,"size":150,"checktime":9800,"poptime":10600,"rmtime":11400},
+            {"x":75,"y":225,"size":150,"checktime":9800,"poptime":10600,"rmtime":11400},
+            {"x":75,"y":-225,"size":150,"checktime":9800,"poptime":10600,"rmtime":11400},
+            {"x":-75,"y":-225,"size":150,"checktime":9800,"poptime":10600,"rmtime":11400},
+
+            {"x":225,"y":225,"size":150,"checktime":10600,"poptime":11400,"rmtime":12200},
+            {"x":-225,"y":225,"size":150,"checktime":10600,"poptime":11400,"rmtime":12200},
+            {"x":-225,"y":-225,"size":150,"checktime":10600,"poptime":11400,"rmtime":12200},
+            {"x":225,"y":-225,"size":150,"checktime":10600,"poptime":11400,"rmtime":12200},
+
+            {"x":225,"y":75,"size":150,"checktime":11400,"poptime":12200,"rmtime":13000},
+            {"x":225,"y":-75,"size":150,"checktime":11400,"poptime":12200,"rmtime":13000},
+            {"x":-225,"y":-75,"size":150,"checktime":11400,"poptime":12200,"rmtime":13000},
+            {"x":-225,"y":75,"size":150,"checktime":11400,"poptime":12200,"rmtime":13000},
+
+
+            {"x":75,"y":75,"size":150,"checktime":12200,"poptime":13000,"rmtime":13800},
+            {"x":75,"y":-75,"size":150,"checktime":12200,"poptime":13000,"rmtime":13800},
+            {"x":-75,"y":-75,"size":150,"checktime":12200,"poptime":13000,"rmtime":13800},
+            {"x":-75,"y":75,"size":150,"checktime":12200,"poptime":13000,"rmtime":13800},
+
+            {"x":-75,"y":225,"size":150,"checktime":13000,"poptime":13800,"rmtime":14600},
+            {"x":75,"y":225,"size":150,"checktime":13000,"poptime":13800,"rmtime":14600},
+            {"x":75,"y":-225,"size":150,"checktime":13000,"poptime":13800,"rmtime":14600},
+            {"x":-75,"y":-225,"size":150,"checktime":13000,"poptime":13800,"rmtime":14600},
+
+            {"x":225,"y":225,"size":150,"checktime":13800,"poptime":14600,"rmtime":15400},
+            {"x":-225,"y":225,"size":150,"checktime":13800,"poptime":14600,"rmtime":15400},
+            {"x":-225,"y":-225,"size":150,"checktime":13800,"poptime":14600,"rmtime":15400},
+            {"x":225,"y":-225,"size":150,"checktime":13800,"poptime":14600,"rmtime":15400},
+
+            {"x":225,"y":75,"size":150,"checktime":14600,"poptime":15400,"rmtime":16200},
+            {"x":225,"y":-75,"size":150,"checktime":14600,"poptime":15400,"rmtime":16200},
+            {"x":-225,"y":-75,"size":150,"checktime":14600,"poptime":15400,"rmtime":16200},
+            {"x":-225,"y":75,"size":150,"checktime":14600,"poptime":15400,"rmtime":16200},
+
+            {"x":0,"y":0,"size":500,"checktime":15400,"poptime":16200,"rmtime":17000},
+
+
+            {"x":75,"y":75,"size":150,"checktime":17000,"poptime":17800,"rmtime":18600},
+            {"x":75,"y":-75,"size":150,"checktime":17000,"poptime":17800,"rmtime":18600},
+            {"x":-75,"y":-75,"size":150,"checktime":17000,"poptime":17800,"rmtime":18600},
+            {"x":-75,"y":75,"size":150,"checktime":17000,"poptime":17800,"rmtime":18600},
+
+            {"x":-75,"y":225,"size":150,"checktime":17800,"poptime":18600,"rmtime":19400},
+            {"x":75,"y":225,"size":150,"checktime":17800,"poptime":18600,"rmtime":19400},
+            {"x":75,"y":-225,"size":150,"checktime":17800,"poptime":18600,"rmtime":19400},
+            {"x":-75,"y":-225,"size":150,"checktime":17800,"poptime":18600,"rmtime":19400},
+
+            {"x":225,"y":225,"size":150,"checktime":18600,"poptime":19400,"rmtime":20200},
+            {"x":-225,"y":225,"size":150,"checktime":18600,"poptime":19400,"rmtime":20200},
+            {"x":-225,"y":-225,"size":150,"checktime":18600,"poptime":19400,"rmtime":20200},
+            {"x":225,"y":-225,"size":150,"checktime":18600,"poptime":19400,"rmtime":20200},
+
+            {"x":225,"y":75,"size":150,"checktime":19400,"poptime":20200,"rmtime":21000},
+            {"x":225,"y":-75,"size":150,"checktime":19400,"poptime":20200,"rmtime":21000},
+            {"x":-225,"y":-75,"size":150,"checktime":19400,"poptime":20200,"rmtime":21000},
+            {"x":-225,"y":75,"size":150,"checktime":19400,"poptime":20200,"rmtime":21000},
+
+            {"x":75,"y":75,"size":150,"checktime":20200,"poptime":21000,"rmtime":21800},
+            {"x":75,"y":-75,"size":150,"checktime":20200,"poptime":21000,"rmtime":21800},
+            {"x":-75,"y":-75,"size":150,"checktime":20200,"poptime":21000,"rmtime":21800},
+            {"x":-75,"y":75,"size":150,"checktime":20200,"poptime":21000,"rmtime":21800},
+
+            {"x":-75,"y":225,"size":150,"checktime":21000,"poptime":21800,"rmtime":22600},
+            {"x":75,"y":225,"size":150,"checktime":21000,"poptime":21800,"rmtime":22600},
+            {"x":75,"y":-225,"size":150,"checktime":21000,"poptime":21800,"rmtime":22600},
+            {"x":-75,"y":-225,"size":150,"checktime":21000,"poptime":21800,"rmtime":22600},
+
+            {"x":225,"y":225,"size":150,"checktime":21800,"poptime":22600,"rmtime":23400},
+            {"x":-225,"y":225,"size":150,"checktime":21800,"poptime":22600,"rmtime":23400},
+            {"x":-225,"y":-225,"size":150,"checktime":21800,"poptime":22600,"rmtime":23400},
+            {"x":225,"y":-225,"size":150,"checktime":21800,"poptime":22600,"rmtime":23400},
+
+            {"x":225,"y":75,"size":150,"checktime":22600,"poptime":23400,"rmtime":24200},
+            {"x":225,"y":-75,"size":150,"checktime":22600,"poptime":23400,"rmtime":24200},
+            {"x":-225,"y":-75,"size":150,"checktime":22600,"poptime":23400,"rmtime":24200},
+            {"x":-225,"y":75,"size":150,"checktime":22600,"poptime":23400,"rmtime":24200},
+
+            
+            {"x":75,"y":75,"size":150,"checktime":23400,"poptime":24200,"rmtime":25000},
+            {"x":75,"y":-75,"size":150,"checktime":23400,"poptime":24200,"rmtime":25000},
+            {"x":-75,"y":-75,"size":150,"checktime":23400,"poptime":24200,"rmtime":25000},
+            {"x":-75,"y":75,"size":150,"checktime":23400,"poptime":24200,"rmtime":25000},
+
+            {"x":-75,"y":225,"size":150,"checktime":24200,"poptime":25000,"rmtime":25800},
+            {"x":75,"y":225,"size":150,"checktime":24200,"poptime":25000,"rmtime":25800},
+            {"x":75,"y":-225,"size":150,"checktime":24200,"poptime":25000,"rmtime":25800},
+            {"x":-75,"y":-225,"size":150,"checktime":24200,"poptime":25000,"rmtime":25800},
+
+            {"x":225,"y":225,"size":150,"checktime":25000,"poptime":25800,"rmtime":26600},
+            {"x":-225,"y":225,"size":150,"checktime":25000,"poptime":25800,"rmtime":26600},
+            {"x":-225,"y":-225,"size":150,"checktime":25000,"poptime":25800,"rmtime":26600},
+            {"x":225,"y":-225,"size":150,"checktime":25000,"poptime":25800,"rmtime":26600},
+
+            {"x":225,"y":75,"size":150,"checktime":25800,"poptime":26600,"rmtime":27400},
+            {"x":225,"y":-75,"size":150,"checktime":25800,"poptime":26600,"rmtime":27400},
+            {"x":-225,"y":-75,"size":150,"checktime":25800,"poptime":26600,"rmtime":27400},
+            {"x":-225,"y":75,"size":150,"checktime":25800,"poptime":26600,"rmtime":27400},
+
+            
+            {"x":75,"y":75,"size":150,"checktime":26600,"poptime":27400,"rmtime":28200},
+            {"x":75,"y":-75,"size":150,"checktime":26600,"poptime":27400,"rmtime":28200},
+            {"x":-75,"y":-75,"size":150,"checktime":26600,"poptime":27400,"rmtime":28200},
+            {"x":-75,"y":75,"size":150,"checktime":26600,"poptime":27400,"rmtime":28200},
+
+            {"x":-75,"y":225,"size":150,"checktime":27400,"poptime":28200,"rmtime":29000},
+            {"x":75,"y":225,"size":150,"checktime":27400,"poptime":28200,"rmtime":29000},
+            {"x":75,"y":-225,"size":150,"checktime":27400,"poptime":28200,"rmtime":29000},
+            {"x":-75,"y":-225,"size":150,"checktime":27400,"poptime":28200,"rmtime":29000},
+
+            {"x":225,"y":225,"size":150,"checktime":28200,"poptime":29000,"rmtime":29800},
+            {"x":-225,"y":225,"size":150,"checktime":28200,"poptime":29000,"rmtime":29800},
+            {"x":-225,"y":-225,"size":150,"checktime":28200,"poptime":29000,"rmtime":29800},
+            {"x":225,"y":-225,"size":150,"checktime":28200,"poptime":29000,"rmtime":29800},
+
+            {"x":225,"y":75,"size":150,"checktime":29000,"poptime":29800,"rmtime":30600},
+            {"x":225,"y":-75,"size":150,"checktime":29000,"poptime":29800,"rmtime":30600},
+            {"x":-225,"y":-75,"size":150,"checktime":29000,"poptime":29800,"rmtime":30600},
+            {"x":-225,"y":75,"size":150,"checktime":29000,"poptime":29800,"rmtime":30600},
         ]
     }
 ]
