@@ -336,13 +336,15 @@ void draw() {
               //println("hitting");
               if(muteki==0){
                 //get damage
-                if(score==0){
-                  //miss ensyutu
-                  btntf = 2;
-                }else{
-                  score-=1;
-                  muteki=5*fps;
-                }
+                score -= 1;
+                muteki = 5*fps;
+                //if(score==0){
+                //  //miss ensyutu
+                //  btntf = 2;
+                //}else{
+                //  score-=1;
+                //  muteki=5*fps;
+                //}
               }
             }
           }
@@ -350,7 +352,9 @@ void draw() {
 
       }
       
-      
+      if(score <= 0){
+        btntf = 2;
+      }
       
     }
     
