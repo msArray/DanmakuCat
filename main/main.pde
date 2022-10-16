@@ -406,7 +406,7 @@ void draw() {
         bgm = minim.loadFile( "./assets/typhoon-parade.mp3");
         delayA = 0;
         frame_from_start = 0;
-        score = 100;
+        score = 5;
         songlength = 94;
         btntf = 0;
       }
