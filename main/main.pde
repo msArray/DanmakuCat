@@ -471,6 +471,7 @@ void draw() {
   
   
   
+  
 
   ////Chara hyouji
   //if(btntf != 1){
