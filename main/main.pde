@@ -336,13 +336,15 @@ void draw() {
               //println("hitting");
               if(muteki==0){
                 //get damage
-                if(score==0){
-                  //miss ensyutu
-                  btntf = 2;
-                }else{
-                  score-=1;
-                  muteki=5*fps;
-                }
+                score -= 1;
+                muteki = 5*fps;
+                //if(score==0){
+                //  //miss ensyutu
+                //  btntf = 2;
+                //}else{
+                //  score-=1;
+                //  muteki=5*fps;
+                //}
               }
             }
           }
@@ -350,7 +352,9 @@ void draw() {
 
       }
       
-      
+      if(score <= 0){
+        btntf = 2;
+      }
       
     }
     
@@ -402,7 +406,7 @@ void draw() {
         bgm = minim.loadFile( "./assets/typhoon-parade.mp3");
         delayA = 0;
         frame_from_start = 0;
-        score = 100;
+        score = 5;
         songlength = 94;
         btntf = 0;
       }
