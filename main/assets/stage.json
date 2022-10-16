@@ -42,6 +42,8 @@
             {"x":-100,"y":-200,"size":200,"checktime":10875,"poptime":11813,"rmtime":12000},
             
             
+            
+            
             {"x":-250,"y":250,"size":100,"checktime":11625,"poptime":12188,"rmtime":13500},
             {"x":250,"y":250,"size":100,"checktime":11625,"poptime":12375,"rmtime":13500},
             {"x":-250,"y":-250,"size":100,"checktime":11625,"poptime":12750,"rmtime":13500},
@@ -83,6 +85,11 @@
             {"x":-250,"y":50,"size":100,"checktime":15375,"poptime":15750,"rmtime":16125},
             {"x":250,"y":-50,"size":100,"checktime":15375,"poptime":15750,"rmtime":16125},
             
+            {"x":100,"y":100,"size":200,"checktime":15750,"poptime":16500,"rmtime":17250},
+            {"x":-100,"y":100,"size":200,"checktime":15750,"poptime":16500,"rmtime":17250},
+            
+            
+            
             {"x":250,"y":50,"size":100,"checktime":15750,"poptime":16125,"rmtime":16500},
             {"x":-250,"y":-50,"size":100,"checktime":15750,"poptime":16125,"rmtime":16500},
             {"x":50,"y":-250,"size":100,"checktime":15750,"poptime":16125,"rmtime":16500},
@@ -92,6 +99,10 @@
             {"x":150,"y":-250,"size":100,"checktime":16125,"poptime":16500,"rmtime":16875},
             {"x":250,"y":150,"size":100,"checktime":16125,"poptime":16500,"rmtime":16875},
             {"x":-250,"y":-150,"size":100,"checktime":16125,"poptime":16500,"rmtime":16875},
+            
+            {"x":100,"y":100,"size":200,"checktime":16500,"poptime":17250,"rmtime":18000},
+            {"x":100,"y":-100,"size":200,"checktime":16500,"poptime":17250,"rmtime":18000},
+            
             
             
             {"x":-250,"y":250,"size":100,"checktime":16500,"poptime":16875,"rmtime":17250},
@@ -104,6 +115,10 @@
             {"x":250,"y":-150,"size":100,"checktime":16875,"poptime":17250,"rmtime":17625},
             {"x":150,"y":250,"size":100,"checktime":16875,"poptime":17250,"rmtime":17625},
             
+            {"x":100,"y":-100,"size":200,"checktime":17250,"poptime":18000,"rmtime":18750},
+            {"x":-100,"y":-100,"size":200,"checktime":17250,"poptime":18000,"rmtime":18750},
+            
+            
             {"x":50,"y":250,"size":100,"checktime":17250,"poptime":17625,"rmtime":18000},
             {"x":-50,"y":-250,"size":100,"checktime":17250,"poptime":17625,"rmtime":18000},
             {"x":-250,"y":50,"size":100,"checktime":17250,"poptime":17625,"rmtime":18000},
@@ -113,6 +128,10 @@
             {"x":-250,"y":-50,"size":100,"checktime":17625,"poptime":18000,"rmtime":18375},
             {"x":50,"y":-250,"size":100,"checktime":17625,"poptime":18000,"rmtime":18375},
             {"x":-50,"y":250,"size":100,"checktime":17625,"poptime":18000,"rmtime":18375},
+            
+            {"x":-100,"y":-100,"size":200,"checktime":18000,"poptime":18750,"rmtime":19500},
+            {"x":-100,"y":100,"size":200,"checktime":18000,"poptime":18750,"rmtime":19500},
+            
             
             {"x":-150,"y":250,"size":100,"checktime":18000,"poptime":18375,"rmtime":18750},
             {"x":150,"y":-250,"size":100,"checktime":18000,"poptime":18375,"rmtime":18750},
@@ -135,6 +154,10 @@
             {"x":-250,"y":50,"size":100,"checktime":19125,"poptime":19500,"rmtime":19875},
             {"x":250,"y":-50,"size":100,"checktime":19125,"poptime":19500,"rmtime":19875},
             
+            {"x":-100,"y":100,"size":200,"checktime":19500,"poptime":20250,"rmtime":21000},
+            {"x":100,"y":-100,"size":200,"checktime":19500,"poptime":20250,"rmtime":21000},
+            
+            
             {"x":250,"y":50,"size":100,"checktime":19500,"poptime":19875,"rmtime":20250},
             {"x":-250,"y":-50,"size":100,"checktime":19500,"poptime":19875,"rmtime":20250},
             {"x":50,"y":-250,"size":100,"checktime":19500,"poptime":19875,"rmtime":20250},
@@ -146,6 +169,7 @@
             {"x":-250,"y":-150,"size":100,"checktime":19875,"poptime":20250,"rmtime":20625},
             
             
+            
             {"x":-250,"y":250,"size":100,"checktime":20250,"poptime":20625,"rmtime":21000},
             {"x":250,"y":250,"size":100,"checktime":20250,"poptime":20625,"rmtime":21000},
             {"x":-250,"y":-250,"size":100,"checktime":20250,"poptime":20625,"rmtime":21000},
@@ -155,6 +179,10 @@
             {"x":-150,"y":-250,"size":100,"checktime":20625,"poptime":21000,"rmtime":21375},
             {"x":250,"y":-150,"size":100,"checktime":20625,"poptime":21000,"rmtime":21375},
             {"x":150,"y":250,"size":100,"checktime":20625,"poptime":21000,"rmtime":21375},
+            
+            {"x":100,"y":100,"size":200,"checktime":21000,"poptime":21750,"rmtime":22500},
+            {"x":-100,"y":-100,"size":200,"checktime":21000,"poptime":21750,"rmtime":22500},
+            
             
             {"x":50,"y":250,"size":100,"checktime":21000,"poptime":21375,"rmtime":21750},
             {"x":-50,"y":-250,"size":100,"checktime":21000,"poptime":21375,"rmtime":21750},
@@ -916,10 +944,10 @@
             {"x":50,"y":-250,"size":100,"checktime":85875,"poptime":86250,"rmtime":86625},
             {"x":-50,"y":250,"size":100,"checktime":85875,"poptime":86250,"rmtime":86625},
             
-            {"x":-150,"y":250,"size":100,"checktime":87250,"poptime":86625,"rmtime":87000},
-            {"x":150,"y":-250,"size":100,"checktime":87250,"poptime":86625,"rmtime":87000},
-            {"x":250,"y":150,"size":100,"checktime":87250,"poptime":86625,"rmtime":87000},
-            {"x":-250,"y":-150,"size":100,"checktime":87250,"poptime":86625,"rmtime":87000},
+            {"x":-150,"y":250,"size":100,"checktime":86250,"poptime":86625,"rmtime":87000},
+            {"x":150,"y":-250,"size":100,"checktime":86250,"poptime":86625,"rmtime":87000},
+            {"x":250,"y":150,"size":100,"checktime":86250,"poptime":86625,"rmtime":87000},
+            {"x":-250,"y":-150,"size":100,"checktime":86250,"poptime":86625,"rmtime":87000},
             
             
             {"x":250,"y":250,"size":100,"checktime":86625,"poptime":87000,"rmtime":87375},
