@@ -424,6 +424,13 @@ void draw() {
     textSize(80);
     text(score,590,80);
     
+    if(muteki != 0){
+      int mutekiSec = muteki/60 + 1;
+      fill(100);
+      textSize(25);
+      text("無敵タイム"+mutekiSec,500,80);
+    }
+    
   }else if(btntf == 2){
     //gameover gamen
     bgm.close();
