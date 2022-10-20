@@ -1239,9 +1239,9 @@
         
             
             {"x":-250,"y":100,"size":400,"checktime":92625,"poptime":93093,"rmtime":100000},
-            {"x":-50,"y":-280,"size":500,"checktime":92625,"poptime":93188,"rmtime":100000},
-            {"x":250,"y":-70,"size":500,"checktime":92625,"poptime":93281,"rmtime":100000},
-            {"x":150,"y":250,"size":500,"checktime":92625,"poptime":93375,"rmtime":100000}
+            {"x":-50,"y":-250,"size":500,"checktime":92625,"poptime":93188,"rmtime":100000},
+            {"x":300,"y":-70,"size":500,"checktime":92625,"poptime":93281,"rmtime":100000},
+            {"x":150,"y":380,"size":500,"checktime":92625,"poptime":93375,"rmtime":100000}
         ]
     }
 ]
