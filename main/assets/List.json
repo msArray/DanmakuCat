@@ -1,8 +1,6 @@
 [
-    {"listamount":3},
+    {"listamount":1},
     {"humen":[
-        {"name":"タイフーンパレード","path":"./assets/stage.json","sound":"./assets/typhoon-parade.mp3","length":95},
-        {"name":"NyanCat","path":"./assets/stage1.json","sound":"./assets/nyancat.mp3","length":224},
-        {"name":"野良猫は宇宙を目指した","path":"./assets/stage2.json","sound":"./assets/noraneko-ha-uchu-wo-mezashita.mp3","length":126}
+        {"name":"タイフーンパレード","path":"./assets/stage.json","sound":"./assets/typhoon-parade.mp3","length":95}
     ]}
 ]
