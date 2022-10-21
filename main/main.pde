@@ -33,6 +33,15 @@ final int SIZE = 600;
 final int TOP_BAR = 100;
 JSONArray jArray;
 JSONObject detailObject;
+int[] noteX;
+int[] noteY;
+int[] notesize;
+int[] notecheck;
+int[] notepop;
+int[] noterm;
+int amount;
+int inGamenStart;
+int inGamenEnd;
 
 void settings() {
   size(SIZE, SIZE + TOP_BAR);
@@ -99,6 +108,9 @@ void setup() {
   
   //JSONArray stageNameArray;
   stageNameArray = nameListObject.getJSONArray("humen");
+  
+  inGamenStart = 0;
+  inGamenEnd = 0;
 }
 //functions
 /*
@@ -196,6 +208,36 @@ void draw() {
         player.play();
         jArray = loadJSONArray(humenpath);
         detailObject = jArray.getJSONObject(0);
+        
+        
+        JSONObject humenObject;
+        humenObject = jArray.getJSONObject(1);
+        JSONArray humenArray;
+        humenArray = humenObject.getJSONArray("humendata");
+        
+        
+        
+        amount = humenArray.size();
+        
+        noteX = new int[amount];
+        noteY = new int[amount];
+        notesize = new int[amount];
+        notecheck = new int[amount];
+        notepop = new int[amount];
+        noterm = new int[amount];
+        
+        
+        JSONObject noteObject;
+        
+        for(int i = 0; i < amount; i++){
+          noteObject = humenArray.getJSONObject(i);
+          noteX[i] = noteObject.getInt("x");
+          noteY[i] = noteObject.getInt("y");
+          notesize[i] = noteObject.getInt("size");
+          notecheck[i] = noteObject.getInt("checktime");
+          notepop[i] = noteObject.getInt("poptime");
+          noterm[i] = noteObject.getInt("rmtime");
+        }
         btntf=1;
       } else {
         btntf=0;
@@ -204,16 +246,12 @@ void draw() {
   }else if(btntf == 1){
     //game gamen
     
-    //teki(taka) displays
-    //tekix = 300;
-    //tekiy = 50;
-    //kyara not on the topbar
     if(mouseY <= 100){
       charay = 75;
     }
     
     String stagename;
-    int amount;
+    
     
     //countdown
     if(delayA<fps){
@@ -279,34 +317,34 @@ void draw() {
       //fill(255,255,255);
       //text("×"+score,550,20);
       
-      JSONObject humenObject;
-      humenObject = jArray.getJSONObject(1);
-      JSONArray humenArray;
-      humenArray = humenObject.getJSONArray("humendata");
+      //JSONObject humenObject;
+      //humenObject = jArray.getJSONObject(1);
+      //JSONArray humenArray;
+      //humenArray = humenObject.getJSONArray("humendata");
       
-      //amount = detailObject.getInt("amount");
-      amount = humenArray.size();
+      ////amount = detailObject.getInt("amount");
+      //amount = humenArray.size();
       
-      int[] noteX = new int[amount];
-      int[] noteY = new int[amount];
-      int[] notesize = new int[amount];
-      int[] notecheck = new int[amount];
-      int[] notepop = new int[amount];
-      int[] noterm = new int[amount];
+      //int[] noteX = new int[amount];
+      //int[] noteY = new int[amount];
+      //int[] notesize = new int[amount];
+      //int[] notecheck = new int[amount];
+      //int[] notepop = new int[amount];
+      //int[] noterm = new int[amount];
+      
+      
+      while(inGamenStart < amount && second_from_start*1000 >= notecheck[inGamenStart]){
+        inGamenStart++;
+      }
+      while(inGamenEnd < amount && second_from_start*1000 >= noterm[inGamenEnd]){
+        inGamenEnd++;
+      }
       
 
 
       
-      for(int i = amount-1; i >= 0; i--){
-        JSONObject noteObject;
-        noteObject = humenArray.getJSONObject(i);
+      for(int i = inGamenStart-1; i >= inGamenEnd; i--){
         
-        noteX[i] = noteObject.getInt("x");
-        noteY[i] = noteObject.getInt("y");
-        notesize[i] = noteObject.getInt("size");
-        notecheck[i] = noteObject.getInt("checktime");
-        notepop[i] = noteObject.getInt("poptime");
-        noterm[i] = noteObject.getInt("rmtime");
         
         if(noterm[i] > second_from_start * 1000){
           if(notecheck[i] < second_from_start * 1000){
@@ -378,11 +416,20 @@ void draw() {
     fill(0);
     text(stagename,10,20);
 
-    image(lifeimg, 510, 2, 20, 20);
+    image(lifeimg, 460, 15, 40, 40);
     textAlign(RIGHT);
-    textSize(16);
+    textSize(40);
     fill(0);
-    text("×"+score,550,20);
+    text("×",540,50);
+    textSize(80);
+    text(score,590,80);
+    
+    if(muteki != 0){
+      int mutekiSec = muteki/60 + 1;
+      fill(100);
+      textSize(25);
+      text("無敵タイム"+mutekiSec,500,80);
+    }
     
   }else if(btntf == 2){
     //gameover gamen
@@ -408,6 +455,14 @@ void draw() {
         frame_from_start = 0;
         score = 5;
         songlength = 94;
+        inGamenStart = 0;
+        inGamenEnd = 0;
+        noteX = null;
+        noteY = null;
+        notesize = null;
+        notecheck = null;
+        notepop = null;
+        noterm = null;
         btntf = 0;
       }
     }
@@ -435,6 +490,14 @@ void draw() {
         frame_from_start = 0;
         score = 5;
         songlength = 94;
+        inGamenStart = 0;
+        inGamenEnd = 0;
+        noteX = null;
+        noteY = null;
+        notesize = null;
+        notecheck = null;
+        notepop = null;
+        noterm = null;
         btntf = 0;
       }
     }
